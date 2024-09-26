@@ -1,0 +1,806 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <title>Bienvenu GOOD BUSINESS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="robots" content="index, follow"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+
+        <!--=============== css  ===============-->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/reset.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/plugins.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/color.css' %}">
+        
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+        {% block css %}
+     
+        {% endblock css %}
+    </head>
+    <body>
+        <!--loader-->
+        <div class="loader-wrap">
+            <div class="pin">
+                <div class="pulse"></div>
+            </div>
+        </div>
+        <!--loader end-->
+        <!-- Main  -->
+        <div id="main">
+            <!-- header-->
+            <header class="main-header">
+                <!-- header-top-->
+                <div class="header-top fl-wrap">
+                    <div class="container">
+                        <div class="logo-holder">
+                            <a href="{% url 'home' %}"><img src="" alt="">GOOD BUSINESS</a>
+                        </div>
+                        
+                        <div class="lang-wrap">
+                            <div class="show-lang"><img src="{% static 'images/lan/2.png' %}" alt=""> <span>Fr</span><i class="fa fa-caret-down"></i></div>
+                            <ul class="lang-tooltip green-bg">
+                                <li><a href="#"><img src="{% static 'images/lan/1.png' %}" alt=""> Eng</a></li>
+                            </ul>
+                        </div>
+                        <div class="currency-wrap">
+                            <div class="show-currency-tooltip"><i class="fas fa-dollar-sign"></i> <span>XOF <i class="fa fa-caret-down"></i> </span></div>
+                            <ul class="currency-tooltip">
+                                <li><a href="#"><i class="far fa-euro-sign"></i> USD</a></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- header-top end-->
+                <!-- header-inner-->
+                <div class="header-inner fl-wrap">
+                    <div class="container">
+                        <div class="show-search-button"><span>Recherche</span> <i class="fas fa-search"></i> </div>
+                        
+                        <!-- <div class="wishlist-link"><i class="fal fa-heart"></i><span class="wl_counter">3</span></div> -->
+                        <div class="header-user-menu">
+                            <div class="header-user-name">
+                                <span><img src="{% static 'images/avatar/1.jpg' %}" alt=""></span>
+                            </div>
+                            
+                        </div>
+                        <div class="home-btn"><a href="{% url 'home' %}"><i class="fas fa-home"></i></a></div>
+                        <!-- nav-button-wrap-->
+                        <div class="nav-button-wrap color-bg">
+                            <div class="nav-button">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <!-- nav-button-wrap end-->
+                        <!--  navigation -->
+                        <div class="nav-holder main-menu">
+                            <nav>
+                                <ul>
+                                    <li><a href="{% url 'home' %}" class="act-link">Accueil</a></li>
+                                    <li><a href="{% url 'house_list' %}">Appartements</a> </li>
+                                    <li><a href="{% url 'voiture_list' %}">Voitures</a> </li>
+                                    <li><a href="{% url 'mode_list' %}">Modes</a> </li>
+                                    <li><a href="{% url 'about' %}">A Propos</a> </li>
+                                    <li><a href="{% url 'contacts' %}">Contacts</a></li>
+                                    <!-- <li><a href="{% url 'help' %}">FAQ</a></li> -->
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- navigation  end -->
+                        <!-- wishlist-wrap-->            
+                        <div class="wishlist-wrap scrollbar-inner novis_wishlist">
+                            <div class="box-widget-content">
+                                <div class="widget-posts fl-wrap">
+                                    <ul>
+                                        <li class="clearfix">
+                                            <a href="#"  class="widget-posts-img"><img src="{% static 'images/gal/1.jpg' %}" class="respimg" alt=""></a>
+                                            <div class="widget-posts-descr">
+                                                <a href="#" title="">Park Central</a>
+                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
+                                                <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i> 40 JOURNAL SQUARE PLAZA, NJ, US</a></div>
+                                                <span class="rooms-price">$80 <strong> /  Awg</strong></span>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- wishlist-wrap end--> 
+                    </div>
+                </div>
+                <!-- header-inner end-->
+                <!-- header-search -->
+                <div class="header-search vis-search">
+                    <div class="container">
+                        <div class="row">
+                            <!-- header-search-input-item -->
+                            <div class="col-sm-4">
+                                <div class="header-search-input-item fl-wrap location autocomplete-container">
+                                    <label>Type de destination ou de pièce</label>
+                                    <span class="header-search-input-item-icon"><i class="fal fa-map-marker-alt"></i></span>
+                                    <input type="text" placeholder="Location" class="autocomplete-input" id="autocompleteid" value=""/>
+                                    <a href="#"><i class="fal fa-dot-circle"></i></a>
+                                </div>
+                            </div>
+                            <!-- header-search-input-item end -->
+                            <!-- header-search-input-item -->
+                            <div class="col-sm-3">
+                                <div class="header-search-input-item fl-wrap date-parent">
+                                    <label>Date </label>
+                                    <span class="header-search-input-item-icon"><i class="fal fa-calendar-check"></i></span>
+                                    <input type="text" placeholder="When" name="header-search"   value=""/>
+                                </div>
+                            </div>
+                            <!-- header-search-input-item end -->                             
+                                                      
+                            <!-- header-search-input-item -->
+                            <div class="col-sm-2">
+                                <div class="header-search-input-item fl-wrap">
+                                    <button class="header-search-button" onclick="window.location.href='listing.html'">Recherche <i class="far fa-search"></i></button>
+                                </div>
+                            </div>
+                            <!-- header-search-input-item end -->                                                          
+                        </div>
+                    </div>
+                    <div class="close-header-search"><i class="fal fa-angle-double-up"></i></div>
+                </div>
+                <!-- header-search  end -->
+            </header>
+            {% block content  %}
+            <!--  header end -->
+            <!--  wrapper  -->
+            <div id="wrapper">
+                <!-- content-->
+                <div class="content">
+                    <!--section -->
+                    <section class="hero-section" data-scrollax-parent="true" id="sec1">
+                        <div class="hero-parallax">
+                            <div class="bg"  data-bg="{% static 'images/bg/back.jpeg' %}" data-scrollax="properties: { translateY: '200px' }"></div>
+                            <div class="overlay op7"></div>
+                        </div>
+                        <div class="hero-section-wrap fl-wrap">
+                            <div class="container">
+                                <div class="home-intro">
+                                    <div class="section-title-separator"><span></span></div>
+                                    <h2>GOOD BUSINESS</h2>
+                                    <span class="section-separator"></span>                                    
+                                    <h3>Découvrez toute une gamme d'appartements de luxe</h3>
+                                </div>
+                                
+
+
+                            </div>
+                        </div>
+                        <div class="header-sec-link">
+                            <div class="container"><a href="#sec2" class="custom-scroll-link color-bg"><i class="fal fa-angle-double-down"></i></a></div>
+                        </div>
+                    </section>
+                    <!-- section end -->
+                    <!--section -->
+                    <section id="sec2">
+                        <div class="container">
+                            <div class="section-title">
+                                <div class="section-title-separator"><span></span></div>
+                                <h2>Ce Que Nous Vous Réservons</h2>
+                                <span class="section-separator"></span>
+                                <p>Ne vous faites pas raconter, voyez vous même.</p>
+                            </div>
+						 </div>
+                            <!-- portfolio start -->
+                            <div class="gallery-items fl-wrap mr-bot spad home-grid">
+                                <!-- gallery-item-->
+                                <div class="gallery-item">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span></span> Disponible</div>
+                                            <img  src="{% static 'images/city/2.jpeg' %}"   alt="">
+                                            <div class="listing-item-cat">
+                                                <h3><a href="{% url 'listing' %}">Location et vente de maison</a></h3>
+                                                <div class="weather-grid"   data-grcity="Studio"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Constant care and attention to the patients makes good record</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item gallery-item-second">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <img  src="{% static 'images/city/3.avif' %}"   alt="">
+                                            <div class="listing-counter"><span></span> Disponible</div>
+                                            <div class="listing-item-cat">
+                                                <h3><a href="{% url 'listing' %}">Gammes de voitures</a></h3>
+                                                <div class="weather-grid"   data-grcity="Chambre Salon"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Constant care and attention to the patients makes good record</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span></span> Disponible</div>
+                                            <img  src="{% static 'images/city/mode.jpg' %}"   alt="">
+                                            <div class="listing-item-cat">
+                                                <h3><a href="{% url 'listing' %}">Mode Vestimentaire</a></h3>
+                                                <div class="weather-grid"   data-grcity="2 Chambres Salon"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Constant care and attention to the patients makes good record</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span></span> Disponible</div>
+                                            <img  src="{% static 'images/city/ter.jpeg' %}"   alt="">
+                                            <div class="listing-item-cat">
+                                                <h3><a href="{% url 'listing' %}">Terrains Ruraux</a></h3>
+                                                <div class="weather-grid"   data-grcity="3 Chambres Salon"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Constant care and attention to the patients makes good record</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span></span> Disponible</div>
+                                            <img  src="{% static 'images/city/titre.avif' %}"   alt="">
+                                            <div class="listing-item-cat">
+                                                <h3><a href="{% url 'listing' %}">Titre De Propriétés</a></h3>
+                                                <div class="weather-grid"   data-grcity="Villa"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Constant care and attention to the patients makes good record</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                            </div>
+                            <!-- portfolio end -->
+                    </section>
+                    <!-- section end -->
+                    <!-- section-->
+                    <section class="grey-blue-bg">
+                        <!-- container-->
+                        <div class="container">
+                            <div class="section-title">
+                                <div class="section-title-separator"><span></span></div>
+                                <h2>Immobiliers</h2>
+                                <span class="section-separator"></span>
+                            </div>
+                        </div>
+                        <!-- container end-->
+                        <!-- carousel -->
+                        <div class="list-carousel fl-wrap card-listing ">
+                            <!--listing-carousel-->
+                            <div class="listing-carousel  fl-wrap ">
+                                <!--slick-slide-item-->
+                                {% for room in rooms %}
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="{% url 'rooms:detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
+                                                
+                                               
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="{% url 'rooms:detail' room.id %}">{{room.nom}}</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'rooms:detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
+                                                    </div>
+                                                </div>
+                                                <p>{{room.description|truncatewords:10}}</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/nuit<span> <br>  {{room.prix_par_nuit|intcomma}} F</span></div>
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/semaine<span> <br>  {{room.prix_par_semaine|intcomma}} F</span></div>
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/mois<span> <br>  {{room.prix_par_mois|intcomma}} F</span></div>
+                                                </ul>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->
+                                </div>
+                                {% endfor %}
+                                <!--slick-slide-item end-->
+                                
+                            </div>
+                            <!--listing-carousel end-->
+                            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                        </div>
+                        <!--  carousel end-->
+                        <!-- portfolio end -->
+                        <a href="{% url 'house_list' %}" class="btn    color-bg">Voir plus<i class="fas fa-caret-right"></i></a>
+                    </section>
+                    <section class="grey-blue-bg">
+                        <!-- container-->
+                        <div class="container">
+                            <div class="section-title">
+                                <div class="section-title-separator"><span></span></div>
+                                <h2>Voitures</h2>
+                                <span class="section-separator"></span>
+                            </div>
+                        </div>
+                        <!-- container end-->
+                        <!-- carousel -->
+                        <div class="list-carousel fl-wrap card-listing ">
+                            <!--listing-carousel-->
+                            <div class="listing-carousel  fl-wrap ">
+                                <!--slick-slide-item-->
+                                {% for room in rooms %}
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="{% url 'rooms:detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
+                                                
+                                               
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="{% url 'rooms:detail' room.id %}">{{room.nom}}</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'rooms:detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
+                                                    </div>
+                                                </div>
+                                                <p>{{room.description|truncatewords:10}}</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/nuit<span> <br>  {{room.prix_par_nuit|intcomma}} F</span></div>
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/semaine<span> <br>  {{room.prix_par_semaine|intcomma}} F</span></div>
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/mois<span> <br>  {{room.prix_par_mois|intcomma}} F</span></div>
+                                                </ul>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->
+                                </div>
+                                {% endfor %}
+                                <!--slick-slide-item end-->
+                                
+                            </div>
+                            <!--listing-carousel end-->
+                            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                        </div>
+                        <!--  carousel end-->
+                        <!-- portfolio end -->
+                        <a href="{% url 'voiture_list' %}" class="btn    color-bg">Voir plus<i class="fas fa-caret-right"></i></a>
+                    </section>
+                    <section class="grey-blue-bg">
+                        <!-- container-->
+                        <div class="container">
+                            <div class="section-title">
+                                <div class="section-title-separator"><span></span></div>
+                                <h2>Modes</h2>
+                                <span class="section-separator"></span>
+                            </div>
+                        </div>
+                        <!-- container end-->
+                        <!-- carousel -->
+                        <div class="list-carousel fl-wrap card-listing ">
+                            <!--listing-carousel-->
+                            <div class="listing-carousel  fl-wrap ">
+                                <!--slick-slide-item-->
+                                {% for room in rooms %}
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="{% url 'rooms:detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
+                                                
+                                               
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="{% url 'rooms:detail' room.id %}">{{room.nom}}</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'rooms:detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
+                                                    </div>
+                                                </div>
+                                                <p>{{room.description|truncatewords:10}}</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/nuit<span> <br>  {{room.prix_par_nuit|intcomma}} F</span></div>
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/semaine<span> <br>  {{room.prix_par_semaine|intcomma}} F</span></div>
+                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/mois<span> <br>  {{room.prix_par_mois|intcomma}} F</span></div>
+                                                </ul>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->
+                                </div>
+                                {% endfor %}
+                                <!--slick-slide-item end-->
+                                
+                            </div>
+                            <!--listing-carousel end-->
+                            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                        </div>
+                        <!--  carousel end-->
+                        <!-- portfolio end -->
+                        <a href="{% url 'mode_list' %}" class="btn    color-bg">Voir plus<i class="fas fa-caret-right"></i></a>
+                    </section>
+                   
+                    <section>
+                        <div class="container">
+                            <div class="section-title">
+                                <div class="section-title-separator"><span></span></div>
+                                <h2>Pourquoi nous choisir</h2>
+                                <span class="section-separator"></span>
+                            </div>
+                            <!-- -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fal fa-headset"></i></div>
+                                        <h4><a href="#"> Support client 24/7</a></h4>
+                                        <p>Si vous avez besoin d'aide lors de vos déplacements ou hébergements, contactez-nous au +228 93 71 61 16.</p>
+                                    </div>
+                                    <!-- process-item end -->
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fal fa-gift"></i></div>
+                                        <h4> <a href="#">Remboursement Garantie</a></h4>
+                                        <p>Les hôtes sont protégés contre les dommages-intérêts en cas d'insatisfaction.</p>
+                                    </div>
+                                    <!-- process-item end -->                                
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item nodecpre">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fal fa-credit-card"></i></div>
+                                        <h4><a href="#"> Sécurité Garantie</a></h4>
+                                        <p>Nous visons à construire une communauté de confiance et de sécurité.</p>
+                                    </div>
+                                    <!-- process-item end -->                                
+                                </div>
+                            </div>
+                            <!--process-wrap   end-->
+                            <div class=" single-facts fl-wrap mar-top">
+                                <!-- inline-facts -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-users"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="254">154</div>
+                                            </div>
+                                        </div>
+                                        <h6>Nouveaux visiteurs chaque semaine</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-thumbs-up"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="121">121</div>
+                                            </div>
+                                        </div>
+                                        <h6>Clients satisfaits chaque année</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-award"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="172">172</div>
+                                            </div>
+                                        </div>
+                                        <h6>A remporté des prix</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-hotel"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="732">732</div>
+                                            </div>
+                                        </div>
+                                        <h6>Nouvelle annonce chaque semaine</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                            </div>
+                        </div>
+                    </section>
+                    <!-- section end -->
+                    
+                    
+                  
+                    <!--section -->                       
+                  
+                </div>
+                <!-- content end-->
+            </div>
+            <!--wrapper end -->
+            
+            
+            <!--footer -->
+            <footer class="main-footer">
+                <!--subscribe-wrap-->
+                <div class="subscribe-wrap color-bg  fl-wrap">
+                    <div class="container">
+                        <div class="sp-bg"> </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="subscribe-header">
+                                    <h3>S'abonner</h3>
+                                    <p>Vous voulez être informé lorsque nous lançons un nouveau modèle ou une mise à jour.Inscrivez-vous et nous vous enverrons un nonification par e-mail.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <div class="footer-widget fl-wrap">
+                                    <div class="subscribe-widget fl-wrap">
+                                        <div class="subcribe-form">
+                                            <form id="subscribe">
+                                                <input class="enteremail fl-wrap" name="email" id="subscribe-email" placeholder="Entrer votre Email" spellcheck="false" type="text">
+                                                <button type="submit" id="subscribe-button" class="subscribe-button"><i class="fas fa-rss-square"></i> S'abonner</button>
+                                                <label for="subscribe-email" class="subscribe-message"></label>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wave-bg"></div>
+                </div>
+                <!--subscribe-wrap end -->
+                {% endblock %}
+                <!--footer-inner-->
+                <div class="footer-inner">
+                    <div class="container">
+                        <!--footer-fw-widget-->
+                        <div class="footer-fw-widget fl-wrap">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="footer-carousel-title">
+                                        Nos partenaires
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <!--footer-carousel-wrap-->
+                                    <div class="footer-carousel-wrap fl-wrap">
+                                        <div class="footer-carousel fl-wrap">
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="{% static 'images/partners/1' %}" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="{% static 'images/partners/1' %}" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->                             
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="{% static 'images/partners/1' %}" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="{% static 'images/partners/1' %}" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->      
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="{% static 'images/partners/1' %}" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="{% static 'images/partners/1' %}" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->                                     
+                                        </div>
+                                        <div class="fc-cont  fc-cont-prev"><i class="fal fa-angle-left"></i></div>
+                                        <div class="fc-cont  fc-cont-next"><i class="fal fa-angle-right"></i></div>
+                                    </div>
+                                    <!--footer-carousel-wrap end-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--footer-fw-widget end-->
+                        <div class="row">
+                            <!--footer-widget -->
+                            <div class="col-md-4">
+                                <div class="footer-widget fl-wrap">
+                                    <h3>À propos de nous</h3>
+                                    <div class="footer-contacts-widget fl-wrap">
+                                        <p>
+                                            Good Business est une entreprise multisectorielle spécialisée dans l'immobilier, la location et vente de véhicules et moteurs, 
+                                            les vêtements et accessoires, les pièces détachées, ainsi que la publicité, offrant des services fiables et de qualité pour répondre à tous vos besoins.
+                                        </p>
+                                        <ul  class="footer-contacts fl-wrap">
+                                            <li><span><i class="fal fa-envelope"></i> mail :</span><a href="#" target="_blank">goodbusiness@gmail.com</a></li>
+                                            <li> <span><i class="fal fa-map-marker-alt"></i> Adresse :</span><a href="#" target="_blank">Adidogomé, Lomé-Togo</a></li>
+                                            <li><span><i class="fal fa-phone"></i> Téléphone :</span><a href="#">+228 79 51 80 99</a></li>
+                                        </ul>
+                                        <div class="footer-social">
+                                            <span>Trouve nous : </span>
+                                            <ul>
+                                                <li><a href="" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="" target="_blank"><i class="fab fa-brands:tiktok"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--footer-widget end-->
+                            <!--footer-widget -->
+                            <div class="col-md-4">
+                                <div class="footer-widget fl-wrap">
+                                    <h3>Nos dernières publications</h3>
+                                    <div class="widget-posts fl-wrap">
+                                        <ul>
+                                            <li class="clearfix">
+                                                <a href="#"  class="widget-posts-img"><img src="{% static 'images/all/1.jpg' %}" class="respimg" alt=""></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="#" title="">Vivamus dapibus rutrum</a>
+                                                    <span class="widget-posts-date"> 21 Mar 09.05 </span>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <a href="#"  class="widget-posts-img"><img src="{% static 'images/all/1.jpg' %}" class="respimg" alt=""></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="#" title=""> In hac habitasse platea</a>
+                                                    <span class="widget-posts-date"> 7 Mar 18.21 </span>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <a href="#"  class="widget-posts-img"><img src="{% static 'images/all/1.jpg' %}" class="respimg" alt=""></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="#" title="">Tortor tempor in porta</a>
+                                                    <span class="widget-posts-date"> 7 Mar 16.42 </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--footer-widget end-->
+                            <!-- footer-widget  -->
+                            <div class="col-md-4">
+                                <div class="footer-widget fl-wrap ">
+                                    <h3>Liens Utils</h3>
+                                        <ul class="footer-list fl-wrap">
+                                            <li><a href="{% url 'about' %}">Au sujet de notre compagnie</a></li>
+                                            <li><a href="{% url 'blog' %}">Nos dernières nouvelles</a></li>
+                                            <li><a href="{% url 'help' %}">Centre d'aide</a></li>
+                                            <li><a href="{% url 'contacts' %}">contacts</a></li>											
+                                        </ul>
+										
+                                </div>
+                            </div>
+                            <!-- footer-widget end-->
+                        </div>
+                        <div class="clearfix"></div>
+                        <!--footer-widget -->
+                        <div class="footer-widget">
+                            <div class="row">
+                                <div class="col-md-4"><a class="contact-btn color-bg" href="{% url 'contacts' %}">Entrer en contact<i class="fal fa-envelope"></i></a></div>
+                                <div class="col-md-8">
+                                    <div class="customer-support-widget fl-wrap">
+                                        <h4>Service client : </h4>
+                                        <a href="tel:+22879518099" class="cs-mumber">(228) 79 51 80 99</a>
+                                        <a href="tel:+22879518099" class="cs-mumber-button color2-bg">Appelle maintenant <i class="far fa-phone-volume"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--footer-widget end -->
+                    </div>
+                </div>
+                <!--footer-inner end -->
+                <div class="footer-bg">
+                </div>
+                <!--sub-footer-->
+                <div class="sub-footer">
+                    <div class="container">
+                        <div class="copyright"> &#169; GoodBusiness 2024 .  All rights reserved.</div>
+                        <div class="subfooter-lang">
+                            <div class="subfooter-show-lang"><span>Eng</span><i class="fa fa-caret-up"></i></div>
+                            <ul class="subfooter-lang-tooltip">
+                                <li><a href="#">French</a></li>
+                            </ul>
+                        </div>
+                        <div class="subfooter-nav">
+                            <ul>
+                                <li><a href="{% url 'term_condition' %}">Conditions d'utilisation</a></li>
+                                <li><a href="{% url 'police_prive' %}">politique de confidentialité</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--sub-footer end -->
+            </footer>
+            <!--footer end -->
+            <!--map-modal -->
+            <div class="map-modal-wrap">
+                <div class="map-modal-wrap-overlay"></div>
+                <div class="map-modal-item">
+                    <div class="map-modal-container fl-wrap">
+                        <div class="map-modal fl-wrap">
+                            <div id="singleMap" data-latitude="40.7" data-longitude="-73.1"></div>
+                        </div>
+                        <h3><i class="fal fa-location-arrow"></i><a href="#">Titre de l'hôtel</a></h3>
+                        <input id="pac-input" class="controls fl-wrap controls-mapwn" type="text" placeholder="What Nearby ?   Bar , Gym , Restaurant ">
+                        <div class="map-modal-close"><i class="fal fa-times"></i></div>
+                    </div>
+                </div>
+            </div>
+            <!--map-modal end -->            
+            
+            <a class="to-top"><i class="fas fa-caret-up"></i></a>
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->
+        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script> 
+        <script type="text/javascript" src="{% static 'js/map-single.js' %}"></script>         
+    </body>
+</html>

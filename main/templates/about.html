@@ -1,0 +1,307 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+            <!--  wrapper  -->
+            <div id="wrapper">
+                <!-- content-->
+                <div class="content">
+                    <!--  section  -->
+                    <section class="parallax-section single-par" data-scrollax-parent="true">
+                        <div class="bg par-elem "  data-bg="{% static 'images/bg/abou.jpeg' %}" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="section-title center-align big-title">
+                                <div class="section-title-separator"><span></span></div>
+                                <h2><span>A Propos De Nous</span></h2>
+                                <span class="section-separator"></span>
+                                <h4>Découvrez notre entreprise.</h4>
+                            </div>
+                        </div>
+                        <div class="header-sec-link">
+                            <div class="container"><a href="#sec1" class="custom-scroll-link color-bg"><i class="fal fa-angle-double-down"></i></a></div>
+                        </div>
+                    </section>
+                    <!--  section  end-->
+                    <div class="breadcrumbs-fs fl-wrap">
+                        <div class="container">
+                            <div class="breadcrumbs fl-wrap"><a href="#">Accueil</a><a href="#">Pages</a><span>About Us</span></div>
+                        </div>
+                    </div>
+                    <section  id="sec1" class="middle-padding">
+                        <div class="container">
+                            <!--about-wrap --> 
+                            <div class="about-wrap">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="video-box fl-wrap">
+                                            <img src="{% static 'images/story_imag.jpeg' %}" class="respimg" alt="">
+                                            <a class="video-box-btn image-popup" href="https://youtu.be/ft5tScISY90?si=HM2MyjeMd6zMeZ-b"><i class="fa fa-play" aria-hidden="true"></i></a>
+                                            <span class="video-box-title">Notre présentation vidéo</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="list-single-main-item-title fl-wrap">
+                                            <h3>QUI SOMMES <span>NOUS</span></h3>
+                                        </div>
+                                        <p>Good Business est une entreprise multisectorielle dédiée à fournir des services de qualité dans plusieurs domaines clés. Nous sommes spécialisés dans l'immobilier, offrant des solutions de location et de vente de propriétés, ainsi que dans la location et la vente de véhicules et moteurs.</p>
+                                        <p>
+                                            Nous proposons également une large gamme de vêtements et d'accessoires vestimentaires pour tous les styles, des pièces détachées et moteurs pour assurer l'entretien des véhicules, ainsi que des services de publicité pour aider les entreprises à accroître leur visibilité. Chez Good Business, notre objectif est de répondre à tous vos besoins avec professionnalisme et fiabilité.
+                                        </p>
+                                        <a href="#sec2" class="btn  color-bg float-btn custom-scroll-link">View Our Team <i class="fal fa-users"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- about-wrap end  --> 
+                            <div class=" single-facts fl-wrap">
+                                <!-- inline-facts -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-users"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="254">154</div>
+                                            </div>
+                                        </div>
+                                        <h6>Nouveaux visiteurs chaque semaine</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-thumbs-up"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="121">121</div>
+                                            </div>
+                                        </div>
+                                        <h6>Clients satisfaits chaque année</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-award"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="172">172</div>
+                                            </div>
+                                        </div>
+                                        <h6>A remporté des prix</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-hotel"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="732">732</div>
+                                            </div>
+                                        </div>
+                                        <h6>Nouvelle annonce chaque semaine</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                            </div>
+                        </div>
+                    </section>
+                    <!-- section end -->
+                    <!--section -->
+                    <section class="color-bg hidden-section">
+                        <div class="wave-bg wave-bg2"></div>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>Pourquoi nous choisir</h2>
+                                <span class="section-separator"></span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.</p>
+                            </div>
+                            <!-- -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fal fa-headset"></i></div>
+                                        <h4><a href="#"> Assistance 24 heures sur 24</a></h4>
+                                    </div>
+                                    <!-- process-item end -->
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fal fa-cogs"></i></div>
+                                        <h4> <a href="#">panneau d'administration</a></h4>
+                                    </div>
+                                    <!-- process-item end -->                                
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item nodecpre">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fab fa-android"></i></div>
+                                        <h4><a href="#"> Adapté aux mobiles</a></h4>
+                                    </div>
+                                    <!-- process-item end -->                                
+                                </div>
+                            </div>
+                            <!--process-wrap   end-->
+                        </div>
+                    </section>
+                    <!-- section end -->
+                    <!--section -->
+                    <section id="sec2">
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>Notre équipe</h2>
+                                <span class="section-separator"></span>
+                            </div>
+                            <div class="team-holder section-team fl-wrap">
+                                <!-- team-item -->
+                                <div class="team-box">
+                                    <div class="team-photo">
+                                        <img src="{% static 'images/team/C.jpeg' %}" alt="" class="respimg">
+                                    </div>
+                                    <div class="team-info">
+                                        <div class="team-dec"><i class="fal fa-chart-line"></i></div>
+                                        <h3><a href="#">SANTOS</a></h3>
+                                        <h4>CEO & Founder</h4>
+                                        <div class="team-social">
+                                            <ul>
+                                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                            <a class="team-contact_link" href="#"><i class="fal fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- team-item  end-->
+                                <!-- team-item -->
+                                <div class="team-box">
+                                    <div class="team-photo">
+                                        <img src="{% static 'images/team/C.jpeg' %}" alt="" class="respimg">
+                                    </div>
+                                    <div class="team-info">
+                                        <div class="team-dec"><i class="fal fa-camera-retro"></i></div>
+                                        <h3><a href="#">Mohammed</a></h3>
+                                        <h4>Agent technique</h4>
+                                        <div class="team-social">
+                                            <ul>
+                                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                            <a class="team-contact_link" href="#"><i class="fal fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- team-item end  -->
+                                <!-- team-item -->
+                                <div class="team-box">
+                                    <div class="team-photo">
+                                        <img src="{% static 'images/team/C.jpeg' %}" alt="" class="respimg">
+                                    </div>
+                                    <div class="team-info">
+                                        <div class="team-dec"><i class="fal fa-desktop"></i></div>
+                                        <h3><a href="#">Joël ASSOU</a></h3>
+                                        <h4>IT Consultant</h4>
+                                        <div class="team-social">
+                                            <ul>
+                                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                            <a class="team-contact_link" href="#"><i class="fal fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- team-item end  -->
+                            </div>
+                        </div>
+                    </section>
+                    <!-- section end -->
+                    <section class="parallax-section" data-scrollax-parent="true">
+                        <div class="bg par-elem "  data-bg="images/bg/1.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="overlay"></div>
+                        <!--container-->
+                        <div class="container">
+                            <div class="intro-item fl-wrap">
+                                <h2>Besoin de plus d'informations</h2>
+                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</h3>
+                                <a class="btn  color-bg" href="{% url 'contacts'%}">Get in Touch <i class="fal fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>Témoignages</h2>
+                                <span class="section-separator"></span>
+                                </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!--slider-carousel-wrap -->
+                        <div class="slider-carousel-wrap text-carousel-wrap fl-wrap">
+                            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                            <div class="text-carousel single-carousel cur_carousel-slider-container fl-wrap">
+                                <!--slick-item -->
+                                <div class="slick-item">
+                                    <div class="text-carousel-item">
+                                        <div class="popup-avatar"><img src="images/avatar/1.jpg" alt=""></div>
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
+                                        <a href="#" class="testim-link">Via Facebook</a>
+                                    </div>
+                                </div>
+                                <!--slick-item end -->
+                                <!--slick-item -->
+                                <div class="slick-item">
+                                    <div class="text-carousel-item">
+                                        <div class="popup-avatar"><img src="images/avatar/1.jpg" alt=""></div>
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="4"> </div>
+                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
+                                        <a href="#" class="testim-link">Via Facebook</a>
+                                    </div>
+                                </div>
+                                <!--slick-item end -->
+                                <!--slick-item -->
+                                <div class="slick-item">
+                                    <div class="text-carousel-item">
+                                        <div class="popup-avatar"><img src="images/avatar/1.jpg" alt=""></div>
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
+                                        <a href="#" class="testim-link">Via Facebook</a>
+                                    </div>
+                                </div>
+                                <!--slick-item end -->
+                                <!--slick-item -->
+                                <div class="slick-item">
+                                    <div class="text-carousel-item">
+                                        <div class="popup-avatar"><img src="images/avatar/1.jpg" alt=""></div>
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                                        <p> "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit, sed diam nonu mmy nibh euismod tincidunt ut laoreet dolore magna aliquam erat."</p>
+                                        <a href="#" class="testim-link">Via Facebook</a>
+                                    </div>
+                                </div>
+                                <!--slick-item end -->
+                            </div>
+                        </div>
+                        <!--slider-carousel-wrap end-->
+                        <div class="section-decor"></div>
+                    </section>
+                </div>
+                <!-- content end-->
+            </div>
+            <!--wrapper end -->
+           
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "index.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+<!--  wrapper  -->
+<div id="wrapper">
+    <!-- content-->
+    <div class="content">
+
+        <div class="breadcrumbs-fs fl-wrap">
+            <div class="container">
+                <div class="breadcrumbs fl-wrap"><a href="#">Accueil</a><a href="#">Listing </a><span>Fullwidth
+                        Map</span></div>
+            </div>
+        </div>
+        <!--section -->
+        <section class="grey-blue-bg small-padding">
+            <div class="container">
+                <div class="row">
+                    <!--listing -->
+                    <div class="col-md-12">
+
+
+                        <!--col-list-wrap -->
+                        <div class="col-list-wrap fw-col-list-wrap">
+                            <!-- list-main-wrap-->
+                            <div class="list-main-wrap fl-wrap card-listing">
+
+                                <!-- listing-item-container -->
+                                <div class="listing-item-container init-grid-items fl-wrap three-columns-grid">
+                                    <!-- listing-item  -->
+                                    {% for mode in modes %}
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="{% url 'detail' mode.pk %}"><img
+                                                        src="{{mode.first_photo}}" alt=""></a>
+
+                                                <div class="sale-window">{{mode.disponibilité}}</div>
+                                                <div class="geodir-category-opt">
+                                                    <div class="listing-rating card-popup-rainingvis"
+                                                        data-starrating2="5"></div>
+                                                    <div class="rate-class-name">
+                                                        <div class="score">
+                                                            <strong>{{mode.pour}}</strong>{{mode.ville}} </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a
+                                                                href="{% url 'modement:detail' mode.pk %}">{{mode.type}}</a>
+                                                        </h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="#0"
+                                                                class="map-item"><i
+                                                                    class="fas fa-map-marker-alt"></i>{{mode.address}}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p>{{mode.description}}.</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking
+                                                            modes</span>
+                                                    </li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <div class="geodir-category-footer fl-wrap">
+                                                    <div class="geodir-category-price">Prix/Nuit
+                                                        <span>{{mode.prix|intcomma}}
+                                                            F</span></div>
+
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    {% endfor %}
+
+
+
+                                </div>
+                                <!-- listing-item-container end-->
+                                <!-- pagination-->
+                                <div class="pagination">
+                                    <a href="#" class="prevposts-link"><i class="fa fa-caret-left"></i></a>
+                                    <a href="#">1</a>
+                                    <a href="#" class="current-page">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#" class="nextposts-link"><i class="fa fa-caret-right"></i></a>
+                                </div>
+                                <!-- pagination end-->
+                            </div>
+                            <!-- list-main-wrap end-->
+                        </div>
+                        <!--col-list-wrap end -->
+                    </div>
+                    <!--listing  end-->
+                </div>
+                <!--row end-->
+            </div>
+        </section>
+    </div>
+    <!-- content end-->
+</div>
+<!--wrapper end -->
+{% endblock %}
