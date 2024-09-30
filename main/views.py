@@ -135,7 +135,7 @@ def book_room(request, pk):
     message = f"Salut, je suis intéressé par cet appartement: {room_url}"
     
     # Define the recipient number
-    recipient_number = '22879518099'  # Replace with the recipient's phone number
+    recipient_number = '22870518099'  # Replace with the recipient's phone number
     
     # Construct the WhatsApp URL with recipient number and message
     whatsapp_params = {
@@ -152,7 +152,7 @@ def book_car(request, pk):
     message = f"Salut, je suis intéressé par cette voiture: {room_url}"
     
     # Define the recipient number
-    recipient_number = '22879518099'  # Replace with the recipient's phone number
+    recipient_number = '22870518099'  # Replace with the recipient's phone number
     
     # Construct the WhatsApp URL with recipient number and message
     whatsapp_params = {
@@ -169,7 +169,7 @@ def book_mode(request, pk):
     message = f"Salut, je suis intéressé par cet article: {room_url}"
     
     # Define the recipient number
-    recipient_number = '22879518099'  # Replace with the recipient's phone number
+    recipient_number = '22870518099'  # Replace with the recipient's phone number
     
     # Construct the WhatsApp URL with recipient number and message
     whatsapp_params = {

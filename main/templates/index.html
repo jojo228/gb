@@ -18,7 +18,7 @@
         <link type="text/css" rel="stylesheet" href="{% static 'css/color.css' %}">
         
         <!--=============== favicons ===============-->
-        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+        <!-- <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"> -->
         {% block css %}
      
         {% endblock css %}
@@ -190,7 +190,7 @@
                                 <div class="section-title-separator"><span></span></div>
                                 <h2>Ce Que Nous Vous Réservons</h2>
                                 <span class="section-separator"></span>
-                                <p>Ne vous faites pas raconter, voyez vous même.</p>
+                                <p>Ne vous faites pas raconter, Suivez nous...!</p>
                             </div>
 						 </div>
                             <!-- portfolio start -->
@@ -202,7 +202,7 @@
                                             <div class="listing-counter"><span></span> Disponible</div>
                                             <img  src="{% static 'images/city/2.jpeg' %}"   alt="">
                                             <div class="listing-item-cat">
-                                                <h3><a href="{% url 'listing' %}">Location et vente de maison</a></h3>
+                                                <h3><a href="#">Location et vente de maison</a></h3>
                                                 <div class="weather-grid"   data-grcity="Studio"></div>
                                                 <div class="clearfix"></div>
                                                 <p>Constant care and attention to the patients makes good record</p>
@@ -218,7 +218,7 @@
                                             <img  src="{% static 'images/city/3.avif' %}"   alt="">
                                             <div class="listing-counter"><span></span> Disponible</div>
                                             <div class="listing-item-cat">
-                                                <h3><a href="{% url 'listing' %}">Gammes de voitures</a></h3>
+                                                <h3><a href="#">Gammes de voitures</a></h3>
                                                 <div class="weather-grid"   data-grcity="Chambre Salon"></div>
                                                 <div class="clearfix"></div>
                                                 <p>Constant care and attention to the patients makes good record</p>
@@ -234,7 +234,7 @@
                                             <div class="listing-counter"><span></span> Disponible</div>
                                             <img  src="{% static 'images/city/mode.jpg' %}"   alt="">
                                             <div class="listing-item-cat">
-                                                <h3><a href="{% url 'listing' %}">Mode Vestimentaire</a></h3>
+                                                <h3><a href="#">Mode Vestimentaire</a></h3>
                                                 <div class="weather-grid"   data-grcity="2 Chambres Salon"></div>
                                                 <div class="clearfix"></div>
                                                 <p>Constant care and attention to the patients makes good record</p>
@@ -250,7 +250,7 @@
                                             <div class="listing-counter"><span></span> Disponible</div>
                                             <img  src="{% static 'images/city/ter.jpeg' %}"   alt="">
                                             <div class="listing-item-cat">
-                                                <h3><a href="{% url 'listing' %}">Terrains Ruraux</a></h3>
+                                                <h3><a href="#">Terrains Urbains Et Ruraux</a></h3>
                                                 <div class="weather-grid"   data-grcity="3 Chambres Salon"></div>
                                                 <div class="clearfix"></div>
                                                 <p>Constant care and attention to the patients makes good record</p>
@@ -266,7 +266,7 @@
                                             <div class="listing-counter"><span></span> Disponible</div>
                                             <img  src="{% static 'images/city/titre.avif' %}"   alt="">
                                             <div class="listing-item-cat">
-                                                <h3><a href="{% url 'listing' %}">Titre De Propriétés</a></h3>
+                                                <h3><a href="#">Titre De Propriétés</a></h3>
                                                 <div class="weather-grid"   data-grcity="Villa"></div>
                                                 <div class="clearfix"></div>
                                                 <p>Constant care and attention to the patients makes good record</p>
@@ -295,21 +295,21 @@
                             <!--listing-carousel-->
                             <div class="listing-carousel  fl-wrap ">
                                 <!--slick-slide-item-->
-                                {% for room in rooms %}
+                                {% for room in houses %}
                                 <div class="slick-slide-item">
                                     <!-- listing-item  -->
                                     <div class="listing-item">
                                         <article class="geodir-category-listing fl-wrap">
                                             <div class="geodir-category-img">
-                                                <a href="{% url 'rooms:detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
+                                                <a href="{% url 'house_detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
                                                 
                                                
                                             </div>
                                             <div class="geodir-category-content fl-wrap title-sin_item">
                                                 <div class="geodir-category-content-title fl-wrap">
                                                     <div class="geodir-category-content-title-item">
-                                                        <h3 class="title-sin_map"><a href="{% url 'rooms:detail' room.id %}">{{room.nom}}</a></h3>
-                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'rooms:detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
+                                                        <h3 class="title-sin_map"><a href="{% url 'house_detail' room.id %}">{{room.nom}}</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'house_detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
                                                     </div>
                                                 </div>
                                                 <p>{{room.description|truncatewords:10}}</p>
@@ -356,21 +356,21 @@
                             <!--listing-carousel-->
                             <div class="listing-carousel  fl-wrap ">
                                 <!--slick-slide-item-->
-                                {% for room in rooms %}
+                                {% for room in cars %}
                                 <div class="slick-slide-item">
                                     <!-- listing-item  -->
                                     <div class="listing-item">
                                         <article class="geodir-category-listing fl-wrap">
                                             <div class="geodir-category-img">
-                                                <a href="{% url 'rooms:detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
+                                                <a href="{% url 'car_detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
                                                 
                                                
                                             </div>
                                             <div class="geodir-category-content fl-wrap title-sin_item">
                                                 <div class="geodir-category-content-title fl-wrap">
                                                     <div class="geodir-category-content-title-item">
-                                                        <h3 class="title-sin_map"><a href="{% url 'rooms:detail' room.id %}">{{room.nom}}</a></h3>
-                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'rooms:detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
+                                                        <h3 class="title-sin_map"><a href="{% url 'car_detail' room.id %}">{{room.nom}}</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'car_detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
                                                     </div>
                                                 </div>
                                                 <p>{{room.description|truncatewords:10}}</p>
@@ -417,21 +417,21 @@
                             <!--listing-carousel-->
                             <div class="listing-carousel  fl-wrap ">
                                 <!--slick-slide-item-->
-                                {% for room in rooms %}
+                                {% for room in clothes %}
                                 <div class="slick-slide-item">
                                     <!-- listing-item  -->
                                     <div class="listing-item">
                                         <article class="geodir-category-listing fl-wrap">
                                             <div class="geodir-category-img">
-                                                <a href="{% url 'rooms:detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
+                                                <a href="{% url 'mode_detail' room.id %}"><img src="{{room.first_photo}}" alt=""></a>
                                                 
                                                
                                             </div>
                                             <div class="geodir-category-content fl-wrap title-sin_item">
                                                 <div class="geodir-category-content-title fl-wrap">
                                                     <div class="geodir-category-content-title-item">
-                                                        <h3 class="title-sin_map"><a href="{% url 'rooms:detail' room.id %}">{{room.nom}}</a></h3>
-                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'rooms:detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
+                                                        <h3 class="title-sin_map"><a href="{% url 'mode_detail' room.id %}">{{room.nom}}</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'mode_detail' room.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{room.adresse}}</a></div>
                                                     </div>
                                                 </div>
                                                 <p>{{room.description|truncatewords:10}}</p>
@@ -673,7 +673,7 @@
                                         <ul  class="footer-contacts fl-wrap">
                                             <li><span><i class="fal fa-envelope"></i> mail :</span><a href="#" target="_blank">goodbusiness@gmail.com</a></li>
                                             <li> <span><i class="fal fa-map-marker-alt"></i> Adresse :</span><a href="#" target="_blank">Adidogomé, Lomé-Togo</a></li>
-                                            <li><span><i class="fal fa-phone"></i> Téléphone :</span><a href="#">+228 79 51 80 99</a></li>
+                                            <li><span><i class="fal fa-phone"></i> Téléphone :</span><a href="#">+228 70 51 80 99</a></li>
                                         </ul>
                                         <div class="footer-social">
                                             <span>Trouve nous : </span>
@@ -743,8 +743,8 @@
                                 <div class="col-md-8">
                                     <div class="customer-support-widget fl-wrap">
                                         <h4>Service client : </h4>
-                                        <a href="tel:+22879518099" class="cs-mumber">(228) 79 51 80 99</a>
-                                        <a href="tel:+22879518099" class="cs-mumber-button color2-bg">Appelle maintenant <i class="far fa-phone-volume"></i></a>
+                                        <a href="tel:+22870518099" class="cs-mumber">(228) 70 51 80 99</a>
+                                        <a href="tel:+22870518099" class="cs-mumber-button color2-bg">Appelle maintenant <i class="far fa-phone-volume"></i></a>
                                     </div>
                                 </div>
                             </div>
