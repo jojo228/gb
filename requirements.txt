@@ -5,7 +5,6 @@ calc==1.0
 certifi==2022.6.15
 cffi==1.16.0
 charset-normalizer==2.1.1
-cinetpay-sdk==0.1.1
 crispy-bootstrap4==2022.1
 cryptography==42.0.2
 defusedxml==0.7.1
