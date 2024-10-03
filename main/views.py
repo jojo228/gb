@@ -35,6 +35,7 @@ def home(request):
     houses = House.objects.all().order_by("-date")[:9]
     cars = Voiture.objects.all().order_by("-date")[:9]
     clothes = Mode.objects.all().order_by("-date")[:9]
+    business = Business.objects.all().order_by('-is_featured', '-created_at')[:9]
     
     return render(request, "index.html", locals())
 
@@ -108,6 +109,30 @@ class ModeListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ModeListView, self).get_context_data(**kwargs)
         return context
+    
+
+class BusinessListView(ListView):
+    model = Business
+    template_name = 'business_listing.html'
+    context_object_name = 'businesses'
+    paginate_by = 10
+
+    def get_queryset(self):
+        queryset = Business.objects.order_by('-is_featured', '-created_at')
+        query = self.request.GET.get('q')
+        category = self.request.GET.get('category')
+        if query:
+            queryset = queryset.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        if category:
+            queryset = queryset.filter(category__name__icontains=category)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        context['query'] = self.request.GET.get('q', '')
+        context['selected_category'] = self.request.GET.get('category', '')
+        return context
 
 
 # DETAIL
@@ -127,6 +152,12 @@ class ModeDetailView(DetailView):
     model = Mode
     context_object_name = "mode"
     template_name = "mode_detail.html"
+
+
+class BusinessDetailView(DetailView):
+    model = Business
+    context_object_name = "business"
+    template_name = 'business_detail.html'
 
     
 

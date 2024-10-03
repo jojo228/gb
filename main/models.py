@@ -4,6 +4,36 @@ from django.urls import reverse
 
 
 # Create your models here.
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+    
+class Business(models.Model):
+    PREMIUM_CHOICES = (
+        ('basic', 'Basic'),
+        ('premium', 'Premium'),
+    )
+    owner = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    description = models.TextField()
+    address = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=20)
+    email = models.EmailField()
+    website = models.URLField(blank=True, null=True)
+    logo = models.ImageField(upload_to='logos/', blank=True, null=True)
+    banner = models.ImageField(upload_to='banners/', blank=True, null=True)
+    is_featured = models.BooleanField(default=False)
+    premium = models.CharField(max_length=10, choices=PREMIUM_CHOICES, default='basic')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.name
+
+
 class HouseType(Enum):
     PIECE = "Pièce"
     DEUX_CHAMBRE_SALON = "Deux chambres salon"

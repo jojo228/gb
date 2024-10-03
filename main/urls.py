@@ -10,15 +10,18 @@ urlpatterns = [
     path("search-results", views.search, name="search"),
     path("term_condition", views.term_condition , name="term_condition"),
     path("police_prive", views.police_prive , name="police_prive"),
+    path('book-room/<int:pk>/', views.book_room, name='book_room'),
 
 
     path("house-list/", views.AnnounceListView.as_view(), name="house_list"),
     path("voiture-list/", views.CarListView.as_view(), name="voiture_list"),
     path("mode-list/", views.ModeListView.as_view(), name="mode_list"),
+    path("business-list/", views.BusinessListView.as_view(), name="business_list"),
 
     path("house/<int:pk>", views.HouseDetailView.as_view(), name="house_detail"),
     path("car/<int:pk>", views.CarDetailView.as_view(), name="car_detail"),
     path("mode/<int:pk>", views.ModeDetailView.as_view(), name="mode_detail"),
+    path('business/<int:pk>/', views.BusinessDetailView.as_view(), name='business_detail'),
 
 
 

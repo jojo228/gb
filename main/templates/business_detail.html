@@ -4,90 +4,7 @@
 {% load humanize %}
 {% block content %}
 
-{% block css %}
-<!--=============== CinetPay Script ===============-->
-<script src="https://cdn.cinetpay.com/seamless/main.js"></script>
-<style>
-    .sdk {
-        display: block;
-        position: absolute;
-        background-position: center;
-        text-align: center;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-</style>
 
-
-<script>
-
-    
-
-    // Retrieve values from reservation details
-    var roomType = "{{reservation.room.room_type}}";
-    var total_amount = parseInt("{{reservation.total_amount}}");
-    var checkInDate = "{{reservation.check_in|date:'d M Y'}}";
-    var checkOutDate = "{{reservation.check_out|date:'d M Y'}}";
-    var totalDays = "{{reservation.total_days}}";
-    var description = "{{reservation.room.name}}";
-    var transaction_id = Math.floor(Math.random() * 100000000).toString()
-
-    // Retrieve values from user details
-    var customer_name = "{{reservation.room.guest.user.first_name}}";
-    var customer_surname = "{{reservation.room..user.last_name}}";
-    var customer_email = "{{reservation.room..user.email}}";
-    var customer_phone_number = "{{reservation.room.guest.contact}}";
-    var customer_address = "{{reservation.room.guest.address}}";
-    var customer_city = "{{reservation.room.guest.city}}";
-    var customer_country = "{{reservation.room.guest.country}}";
-    var customer_zip_code = "{{reservation.room.guest.pincode}}";
-
-
-    function checkout() {
-        CinetPay.setConfig({
-            apikey: '167837621065f9bc1762a003.17505002',
-            site_id: '5867973',
-            notify_url: 'https://miawoezon.com/payment/notification/',
-            mode: 'PRODUCTION'
-        });
-        CinetPay.getCheckout({
-            transaction_id: transaction_id, // YOUR TRANSACTION ID
-            amount: parseInt(total_amount),
-            currency: 'XOF',
-            channels: 'ALL',
-            description: 'Paiement pour ' + description,   
-             //Fournir ces variables pour le paiements par carte bancaire
-            customer_name: customer_name,
-            customer_surname: customer_surname,
-            customer_email: customer_email,
-            customer_phone_number: customer_phone_number,
-            customer_address : customer_address,
-            customer_city: customer_city,
-            customer_country : customer_country,
-            customer_state : "",// le code ISO l'état
-            customer_zip_code : customer_zip_code,
-
-        });
-        // CinetPay.waitResponse(function(data) {
-        //     if (data.status == "REFUSED") {
-        //         if (alert("Votre paiement a échoué")) {
-        //             window.location.reload();
-        //             
-        //         }
-        //     } else if (data.status == "ACCEPTED") {
-        //         if (alert("Votre paiement a été effectué avec succès")) {
-        //             window.location.reload();
-        //             
-        //         }
-        //     }
-        // });
-        CinetPay.onError(function(data) {
-            console.log(data);
-        });
-    }
-</script>
-{% endblock css %}
             <!--  wrapper  -->
             <div id="wrapper">
                 <!-- content-->
@@ -140,10 +57,8 @@
                                         <div class="list-single-main-media fl-wrap" id="sec1">
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-for fl-wrap"  >
-                                                    <div class="slick-slide-item"><img src="{{car.first_photo}}" alt=""></div>
-                                                    {% for pic in car.get_next_four_photos %}
-                                                    <div class="slick-slide-item"><img src="{{pic.file.url}}" alt=""></div>
-                                                    {% endfor %}
+                                                    <div class="slick-slide-item"><img src="{{business.banner.url}}" alt=""></div>
+                                                    <div class="slick-slide-item"><img src="{{business.logo.url}}" alt=""></div>
                                                     
                                                 </div>
                                                 <div class="swiper-button-prev sw-btn"><i class="fal fa-long-arrow-left"></i></div>
@@ -151,10 +66,8 @@
                                             </div>
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-nav fl-wrap">
-                                                    <div class="slick-slide-item"><img src="{{car.first_photo}}" alt=""></div>
-                                                    {% for pic in car.get_next_four_photos %}
-                                                    <div class="slick-slide-item"><img src="{{pic.file.url}}" alt=""></div>
-                                                    {% endfor %}
+                                                    <div class="slick-slide-item"><img src="{{business.banner.url}}" alt=""></div>
+                                                    <div class="slick-slide-item"><img src="{{business.logo.url}}" alt=""></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -164,14 +77,12 @@
                                     <!--  flat-hero-container -->
                                     <div class="flat-hero-container fl-wrap">
                                         <div class="box-widget-item-header fl-wrap ">
-                                            <h3>{{car.type}} ({{car.pour}})</h3>
-                                            <div class="listing-rating-wrap">
-                                                {{car.disponibilité}}
-                                            </div>
+                                            <h3>{{business.name}} ({{business.category}})</h3>
+                                            
                                         </div>
-                                        <div class="list-single-hero-price fl-wrap">Prix<span>{{car.prix|intcomma}} XOF</span></div>
+                                        <div class="list-single-hero-price fl-wrap">Propriétaire:<span>{{business.owner}}</span></div>
                                         
-                                        <a href="{% url 'book_room' car.pk %}" class="btn flat-btn color2-bg big-btn float-btn">Contacter<i class="far fa-phone"></i></a>
+                                        <a href="{% url 'book_room' business.pk %}" class="btn flat-btn color2-bg big-btn" >Contacter<i class="far fa-phone"></i></a>
                                     </div>
                                     <!--   flat-hero-container end -->
                                     <!--box-widget-item -->
@@ -183,9 +94,11 @@
                                                 </div>
                                                 <div class="box-widget-list">
                                                     <ul>
-                                                        <li><span><i class="fal fa-map-marker"></i> Ville :</span> <a href="#">{{car.ville}}</a></li>
-                                                        <li><span><i class="fal fa-phone"></i> Adresse :</span> <a href="#">{{car.address}}</a></li>
-                                                        <li><span><i class="fal fa-envelope"></i> Contact :</span> <a href="#">+ 228 70 51 80 99</a></li>
+                                                        <li><span><i class="fal fa-map"></i> Adresse :</span> <a href="#">{{business.address}}</a></li>
+                                                        <li><span><i class="fal fa-phone"></i> Contact :</span> <a href="#">{{business.phone_number}}</a></li>
+                                                        <li><span><i class="fal fa-search"></i> Site :</span> <a href="#">{{business.website}}</a></li>
+                                                        <li><span><i class="fal fa-envelope"></i> Email :</span> <a href="#">{{business.email}}</a></li>
+
                                                     </ul>
                                                 </div>
                                                 <div class="list-widget-social">
@@ -215,7 +128,7 @@
                                             <div class="list-single-main-item-title fl-wrap">
                                                 <h3>Description</h3>
                                             </div>
-                                            <p>{{car.description}} </p>
+                                            <p>{{business.description}} </p>
                                             <a href="" class="btn flat-btn color-bg big-btn float-btn image-popup">Video Presentation <i class="fal fa-play"></i></a>
                                         </div>
                                         <!--   list-single-main-item end -->

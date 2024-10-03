@@ -101,3 +101,7 @@ class ModeAdmin(admin.ModelAdmin):
         return obj.photos.count()
 
     count_photos.short_disponibilité = "Photo Count"
+
+
+admin.site.register(Category)
+admin.site.register(Business)

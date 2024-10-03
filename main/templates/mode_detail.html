@@ -171,7 +171,7 @@
                                         </div>
                                         <div class="list-single-hero-price fl-wrap">Prix<span>{{mode.prix|intcomma}} XOF</span></div>
                                         
-                                        <a href="booking-single.html" class="btn flat-btn color2-bg big-btn float-btn image-popup" onclick="submitForm()">Obtenir le contact<i class="far fa-phone"></i></a>
+                                        <a href="{% url 'book_room' mode.pk %}" class="btn flat-btn color2-bg big-btn float-btn">Contacter<i class="far fa-phone"></i></a>
                                     </div>
                                     <!--   flat-hero-container end -->
                                     <!--box-widget-item -->

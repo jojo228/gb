@@ -285,6 +285,58 @@
                         <div class="container">
                             <div class="section-title">
                                 <div class="section-title-separator"><span></span></div>
+                                <h2>Business</h2>
+                                <span class="section-separator"></span>
+                            </div>
+                        </div>
+                        <!-- container end-->
+                        <!-- carousel -->
+                        <div class="list-carousel fl-wrap card-listing ">
+                            <!--listing-carousel-->
+                            <div class="listing-carousel  fl-wrap ">
+                                <!--slick-slide-item-->
+                                {% for bus in business %}
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="{% url 'business_detail' bus.id %}"><img src="{{bus.banner.url}}" alt=""></a>
+                                                
+                                               
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="{% url 'business_detail' bus.id %}">{{bus.name}}</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="{% url 'business_detail' bus.id %}" class="map-item"><i class="fas fa-map-marker-alt"></i> {{bus.address}}</a></div>
+                                                    </div>
+                                                </div>
+                                                <p>{{bus.description|truncatewords:10}}</p>
+                                                
+                                                
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->
+                                </div>
+                                {% endfor %}
+                                <!--slick-slide-item end-->
+                                
+                            </div>
+                            <!--listing-carousel end-->
+                            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                        </div>
+                        <!--  carousel end-->
+                        <!-- portfolio end -->
+                        <a href="{% url 'business_list' %}" class="btn    color-bg">Voir plus<i class="fas fa-caret-right"></i></a>
+                    </section>
+                    <section class="grey-blue-bg">
+                        <!-- container-->
+                        <div class="container">
+                            <div class="section-title">
+                                <div class="section-title-separator"><span></span></div>
                                 <h2>Immobiliers</h2>
                                 <span class="section-separator"></span>
                             </div>
@@ -374,17 +426,8 @@
                                                     </div>
                                                 </div>
                                                 <p>{{room.description|truncatewords:10}}</p>
-                                                <ul class="facilities-list fl-wrap">
-                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
-                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
-                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
-                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
-                                                </ul>
-                                                <ul class="facilities-list fl-wrap">
-                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/nuit<span> <br>  {{room.prix_par_nuit|intcomma}} F</span></div>
-                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/semaine<span> <br>  {{room.prix_par_semaine|intcomma}} F</span></div>
-                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/mois<span> <br>  {{room.prix_par_mois|intcomma}} F</span></div>
-                                                </ul>
+                                                
+                                                
                                             </div>
                                         </article>
                                     </div>
@@ -435,17 +478,8 @@
                                                     </div>
                                                 </div>
                                                 <p>{{room.description|truncatewords:10}}</p>
-                                                <ul class="facilities-list fl-wrap">
-                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
-                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
-                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
-                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
-                                                </ul>
-                                                <ul class="facilities-list fl-wrap">
-                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/nuit<span> <br>  {{room.prix_par_nuit|intcomma}} F</span></div>
-                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/semaine<span> <br>  {{room.prix_par_semaine|intcomma}} F</span></div>
-                                                    <div class="geodir-category-price" style="font-size: 65%;">Prix/mois<span> <br>  {{room.prix_par_mois|intcomma}} F</span></div>
-                                                </ul>
+                                                
+                                                
                                             </div>
                                         </article>
                                     </div>
