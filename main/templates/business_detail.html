@@ -57,8 +57,8 @@
                                         <div class="list-single-main-media fl-wrap" id="sec1">
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-for fl-wrap"  >
-                                                    <div class="slick-slide-item"><img src="{{business.banner.url}}" alt=""></div>
-                                                    <div class="slick-slide-item"><img src="{{business.logo.url}}" alt=""></div>
+                                                    <div class="slick-slide-item">{% if business.banner %}<img src="{{business.banner.url}}" alt="">{% endif %}</div>
+                                                    <div class="slick-slide-item">{% if business.logo %}<img src="{{business.logo.url}}" alt="">{% endif %}</div>
                                                     
                                                 </div>
                                                 <div class="swiper-button-prev sw-btn"><i class="fal fa-long-arrow-left"></i></div>
@@ -66,8 +66,8 @@
                                             </div>
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-nav fl-wrap">
-                                                    <div class="slick-slide-item"><img src="{{business.banner.url}}" alt=""></div>
-                                                    <div class="slick-slide-item"><img src="{{business.logo.url}}" alt=""></div>
+                                                    <div class="slick-slide-item">{% if business.banner %}<img src="{{business.banner.url}}" alt="">{% endif %}</div>
+                                                    <div class="slick-slide-item">{% if business.logo %}<img src="{{business.logo.url}}" alt="">{% endif %}</div>
                                                 </div>
                                             </div>
                                         </div>

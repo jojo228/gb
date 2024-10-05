@@ -45,6 +45,7 @@ class HouseType(Enum):
     BOUTIQUE = "Boutique"
     APPARTEMENT_MEUBLES = "Appartement Meublé"
     TERRAINS_RURAUX = "Terrain Rural"
+    TERRAINS_URBAINS = "Terrain Urbains"
 
 
 class ClotheType(Enum):

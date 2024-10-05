@@ -301,7 +301,7 @@
                                     <div class="listing-item">
                                         <article class="geodir-category-listing fl-wrap">
                                             <div class="geodir-category-img">
-                                                <a href="{% url 'business_detail' bus.id %}"><img src="{{bus.banner.url}}" alt=""></a>
+                                                <a href="{% url 'business_detail' bus.id %}">{% if bus.banner %}<img src="{{bus.banner.url}}" alt="">{% endif %}</a>
                                                 
                                                
                                             </div>
