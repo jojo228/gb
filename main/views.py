@@ -90,7 +90,7 @@ class CarListView(ListView):
     template_name = "car_listing.html"
 
     def get_queryset(self):
-        return House.objects.all().order_by("-date")
+        return Voiture.objects.all().order_by("-date")
 
     def get_context_data(self, **kwargs):
         context = super(CarListView, self).get_context_data(**kwargs)
@@ -104,7 +104,7 @@ class ModeListView(ListView):
     template_name = "mode_listing.html"
 
     def get_queryset(self):
-        return House.objects.all().order_by("-date")
+        return Mode.objects.all().order_by("-date")
 
     def get_context_data(self, **kwargs):
         context = super(ModeListView, self).get_context_data(**kwargs)
