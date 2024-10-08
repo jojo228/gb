@@ -11,6 +11,13 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
+
+class HouseCategory(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+    
 class Business(models.Model):
     PREMIUM_CHOICES = (
         ('basic', 'Basic'),
@@ -94,7 +101,7 @@ class House(models.Model):
         ("Vente", "Vente"),
     ]
 
-    type = models.CharField(max_length=100, choices=[(tag.value, tag.name) for tag in HouseType])
+    category = models.ForeignKey(HouseCategory, on_delete=models.SET_NULL, null=True, blank=True)
     description = models.TextField()
     disponibilité = models.CharField(max_length=20, choices=HOUSE_AVAILABILITY,)
     pour = models.CharField(max_length=20, choices=HOUSE_FOR,)

@@ -17,20 +17,20 @@ class HouseAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             "Basic Info",
-            {"fields": ("type", "description", "prix", "disponibilité", "pour", "ville", "address", )},
+            {"fields": ("category", "description", "prix", "disponibilité", "pour", "ville", "address", )},
         ),
         
     )
-    ordering = ("type", "prix")
+    ordering = ("category", "prix")
     list_display = (
-        "type",
+        "category",
         "pour",
         "ville",
         "prix",
         "count_photos",
     )
     list_filter = (
-        "type",
+        "category",
         "pour",
         "ville",
         "prix",
@@ -104,4 +104,5 @@ class ModeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category)
+admin.site.register(HouseCategory)
 admin.site.register(Business)
