@@ -57,8 +57,10 @@
                                         <div class="list-single-main-media fl-wrap" id="sec1">
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-for fl-wrap"  >
-                                                    <div class="slick-slide-item">{% if business.banner %}<img src="{{business.banner.url}}" alt="">{% endif %}</div>
-                                                    <div class="slick-slide-item">{% if business.logo %}<img src="{{business.logo.url}}" alt="">{% endif %}</div>
+                                                    <div class="slick-slide-item"><img src="{{business.first_photo}}" alt=""></div>
+                                                    {% for pic in business.get_next_four_photos %}
+                                                    <div class="slick-slide-item"><img src="{{pic.file.url}}" alt=""></div>
+                                                    {% endfor %}
                                                     
                                                 </div>
                                                 <div class="swiper-button-prev sw-btn"><i class="fal fa-long-arrow-left"></i></div>
@@ -66,8 +68,10 @@
                                             </div>
                                             <div class="single-slider-wrapper fl-wrap">
                                                 <div class="slider-nav fl-wrap">
-                                                    <div class="slick-slide-item">{% if business.banner %}<img src="{{business.banner.url}}" alt="">{% endif %}</div>
-                                                    <div class="slick-slide-item">{% if business.logo %}<img src="{{business.logo.url}}" alt="">{% endif %}</div>
+                                                    <div class="slick-slide-item"><img src="{{business.first_photo}}" alt=""></div>
+                                                    {% for pic in business.get_next_four_photos %}
+                                                    <div class="slick-slide-item"><img src="{{pic.file.url}}" alt=""></div>
+                                                    {% endfor %}
                                                 </div>
                                             </div>
                                         </div>

@@ -27,9 +27,9 @@ class Business(models.Model):
     name = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     description = models.TextField()
-    address = models.CharField(max_length=255)
-    phone_number = models.CharField(max_length=20)
-    email = models.EmailField()
+    address = models.CharField(max_length=255, blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
     website = models.URLField(blank=True, null=True)
     logo = models.ImageField(upload_to='logos/', blank=True, null=True)
     banner = models.ImageField(upload_to='banners/', blank=True, null=True)
@@ -84,8 +84,6 @@ class ModePhoto(models.Model):
     file = models.FileField(upload_to="vest_photos")
     mode = models.ForeignKey("Mode", related_name="photos", on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.caption
     
 
 
@@ -207,6 +205,30 @@ class Mode(models.Model):
         return photos
     
 
+class BusinessPhoto(models.Model):
+    caption = models.CharField(max_length=80)
+    file = models.FileField(upload_to="business_photos")
+    business = models.ForeignKey("Business", related_name="photos", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.caption
+    
+    def get_absolute_url(self):
+        return reverse("business_detail", kwargs={"pk": self.pk})
+
+    def first_photo(self):
+        try:
+            (photo,) = self.photos.all()[:1]
+            return photo.file.url
+        except ValueError:
+            return None
+
+    def get_next_four_photos(self):
+        photos = self.photos.all()[1:5]
+        return photos
+    
+
+    
 class Comment(models.Model):
     author = models.CharField(max_length=60)
     body = models.TextField()

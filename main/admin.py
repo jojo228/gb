@@ -9,6 +9,8 @@ class VoiturePhotoInline(admin.TabularInline):
     model = CarPhoto
 class ModePhotoInline(admin.TabularInline):
     model = ModePhoto
+class BusinessPhotoInline(admin.TabularInline):
+    model = BusinessPhoto
 
 
 @admin.register(House)
@@ -103,6 +105,29 @@ class ModeAdmin(admin.ModelAdmin):
     count_photos.short_disponibilité = "Photo Count"
 
 
+@admin.register(Business)
+class BusinessAdmin(admin.ModelAdmin):
+    inlines = (BusinessPhotoInline,)
+    fieldsets = (
+        (
+            "Basic Info",
+            {"fields": ("owner","name","category","description","address","phone_number","email","website","logo","banner","is_featured","premium")},
+        ),
+        
+    )
+    list_display = (
+        "name",
+        "count_photos",
+    )
+    list_filter = (
+        "name",
+    )
+
+    def count_photos(self, obj):
+        return obj.photos.count()
+
+    count_photos.short_disponibilité = "Photo Count"
+
+
 admin.site.register(Category)
 admin.site.register(HouseCategory)
-admin.site.register(Business)
